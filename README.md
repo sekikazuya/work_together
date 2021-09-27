@@ -154,10 +154,9 @@
 | name               | string | null: false |
 | email              | string | null: false |
 | encrypted_password | string | null: false |
-| affiliated_company | string | null: false |
+| company            | string | null: false |
 | occupation         | text   | null: false |
 | position           | text   | null: false |
-| phone              | string | null: false |
 
 ### Association
 
