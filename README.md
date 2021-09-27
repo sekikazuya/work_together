@@ -120,9 +120,9 @@
   - 目的
     - 気になった企業へ連絡できるようにするため
   - 詳細
-    - フォームを入力し、送信ボタン押すと企業情報を掲載したユーザーのメールアドレスへフォームに入力した内容と自身の連絡先が送信される
+    - フォームを入力し、送信ボタンを押すとチャットルームが開設され、企業情報掲載者とメッセージのやりとりができるようになる。
   - ストーリー（ユースケース）
-    - 企業詳細ページの問い合わせボタンを押し、表示された問い合わせフォームに必要情報を入力し、送信ボタンをクリックすると、フォームに入力した内容と自身の連絡先をメールとして送信できる。
+    - 企業詳細ページの問い合わせボタンを押し、表示された問い合わせフォームに必要情報を入力し、送信ボタンをクリックすると、フォームに入力した内容が反映されたチャットルームが開設され、以降はこのチャットルームでメッセージのやりとりができる。
 - キーワード検索機能
   - 目的
     - ユーザーが簡単にデータ検索できるようにするため
@@ -143,3 +143,103 @@
   - 企業情報編集機能
   - 問い合わせ機能
   - キーワード検索機能
+
+
+# テーブル設計
+
+## users テーブル
+
+| Column             | Type   | Option      |
+| ------------------ | ------ | ----------- |
+| name               | string | null: false |
+| email              | string | null: false |
+| encrypted_password | string | null: false |
+| affiliated_company | string | null: false |
+| occupation         | text   | null: false |
+| position           | text   | null: false |
+| phone              | string | null: false |
+
+### Association
+
+- has_many :companies
+- has_many :room_users
+- has_many :rooms, through: :room_users
+- has_many :inquiries
+
+## companies テーブル
+
+| Column         | Type          | Option                         |
+| -------------- | ------------- | ------------------------------ |
+| name           | string        | null: false                    |
+| name_kana      | string        | null: false                    |
+| image          | ACtiveStorage | null: false                    |
+| sector_id      | integer       | null: false                    |
+| industry_id    | integer       | null: false                    |
+| profile        | text          | null: false                    |
+| prefecture_id  | integer       | null: false                    |
+| city           | string        | null: false                    |
+| building_name  | string        |                                |
+| phone          | string        | null: false                    |
+| business_hours | text          |                                |
+| user           | references    | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- has_many :rooms
+- has_many :inquiries
+- has_many :achievements
+
+## rooms テーブル
+
+| Column  | Type       | Option                         |
+| ------- | ---------- | ------------------------------ |
+| title   | string     | null: false                    |
+| company | references | null: false, foreign_key: true |
+
+### Association
+
+- has_many :room_users
+- has_many :users, through: :room_users
+- belongs_to :company
+- has_many :inquiries
+
+## room_users テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| room   | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :room
+
+## inquiries テーブル
+
+| Column  | Type       | Option                         |
+| ------- | ---------- | ------------------------------ |
+| message | text       | null: false                    |
+| user    | references | null: false, foreign_key: true |
+| company | references | null: false, foreign_key: true |
+| room    | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :company
+- belongs_to :room
+
+## achievements テーブル
+
+| Column       | Type          | Option                         |
+| ------------ | ------------- | ------------------------------ |
+| title        | string        | null: false                    |
+| introduction | text          | null: false                    |
+| image        | ActiveStorage |                                |
+| company      | references    | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :company
