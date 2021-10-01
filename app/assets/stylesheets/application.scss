@@ -11,6 +11,32 @@
  * It is generally better to create a new file per style scope.
  *
  */
- @import "bootstrap";
+
+ /* 
+  *= require_tree .
+  *= require_self
+  */
+
+ @import "bootstrap/scss/bootstrap";
+ @import "companies.scss";
+ @import "reset.css";
  @import "bootswatch/united/variables";
-  @import "bootswatch/united/bootswatch";
+ @import "bootswatch/united/bootswatch";
+
+ // max-width
+
+ .mw-md {
+   max-width: 576px;
+ }
+
+ .mw-xl {
+   max-width: 1200px;
+ }
+
+ .alert-notice {
+   @extend .alert-info;
+ }
+
+ .alert-alert {
+   @extend .alert-danger;
+ }
