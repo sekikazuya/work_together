@@ -17,13 +17,20 @@
   *= require_self
   */
 
- @import "bootstrap/scss/bootstrap";
+ @import "bootstrap";
+ @import "shared/header.scss";
  @import "shared/second-header.scss";
  @import "companies.scss";
+ @import "user/registration.scss";
  @import "reset.css";
- @import "bootswatch/united/variables";
- @import "bootswatch/united/bootswatch";
 
+// ログイン画面
+
+.container-login {
+  @extend .container-fluid;
+  max-width: 576px;
+  padding: 2rem;
+}
  // max-width
 
  .mw-md {
@@ -33,6 +40,8 @@
  .mw-xl {
    max-width: 1200px;
  }
+
+ // 「ログインしました」などのフラッシュ用スタイル
 
  .alert-notice {
    @extend .alert-info;
