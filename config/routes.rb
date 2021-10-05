@@ -4,6 +4,6 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-  get 'companies/index'
   root to: "companies#index"
+  resources :users, only: :show
 end
