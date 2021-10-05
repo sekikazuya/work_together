@@ -10,6 +10,43 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+
+ /* 
+  *= require_tree .
+  *= require_self
+  */
+
+ @import "bootstrap";
+ @import "shared/header.scss";
+ @import "companies.scss";
+ @import "user/registration.scss";
+ @import "users.scss";
+ @import "reset.css";
+
+// ログイン画面
+
+.container-login {
+  @extend .container-fluid;
+  max-width: 576px;
+  padding: 2rem;
+}
+ // max-width
+
+ .mw-md {
+   max-width: 576px;
+ }
+
+ .mw-xl {
+   max-width: 1200px;
+ }
+
+ // 「ログインしました」などのフラッシュ用スタイル
+
+ .alert-notice {
+   @extend .alert-info;
+ }
+
+ .alert-alert {
+   @extend .alert-danger;
+ }

@@ -1,0 +1,14 @@
+<%# CSS・・・assets/stylesheets/shared/header.scss %>
+<header>
+  <nav class="navbar navbar-expand navbar-dark" style="background-color: #ec782b;">
+    <%= link_to image_tag("logo_bg.png", class: "wt-icon"), root_path, class: 'navbar-brand' %>
+    <div id="Navber">
+      <form class="d-flex" action="#">
+        <input class='form-control me-2' placeholder='キーワードから探す'>
+        <button class="search-button">
+          <%= image_tag "search.png", class:"search-icon" %>
+        </button>
+      </form>
+    </div>
+  </nav>
+</header>

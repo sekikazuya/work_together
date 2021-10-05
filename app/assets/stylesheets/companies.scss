@@ -1,0 +1,28 @@
+/* HOME
+--------------------------------- */
+.home-content {
+  text-align: center;
+  margin-top: 10%;
+  color: #524f4f;
+  text-shadow: 0 0 5px #ec782b;
+}
+.home-content p {
+  font-size: 1.125rem;
+  margin: 10px 0 42px
+}
+
+/* 見出し */
+.page-title {
+  font-size: 2.5rem;
+}
+/* 大きな背景画像 */
+.big-bg {
+  background-size: cover;
+  background-position: center top;
+}
+#home {
+  background-image: image-url('main-bg.jpg');
+  background-color: #ec782b;
+  background-blend-mode: lighten;
+  min-height: 100vh;
+}
