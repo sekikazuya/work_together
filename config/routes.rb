@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: "users/sessions",
+    registrations: "users/registrations"
+  }
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
+  get 'users/:id/profile', to: 'users#show', as: 'user_profile'
+
   root to: "companies#index"
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show]
 end
