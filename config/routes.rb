@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   end
 
   root to: "companies#index"
-  resources :users, only: :show
+  resources :users, only: [:show, :edit, :update]
 end
