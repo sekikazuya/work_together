@@ -19,7 +19,7 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :images, name: 'company[images][]', id:"company-image" %>
+        <%= f.file_field :image, id:"company-image" %>
       </div>
     </div>
     <%# /企業画像 %>
@@ -99,11 +99,7 @@
           <label class="form-text">受付時間</label>
           <span class="indispensable">任意</span>
         </div>
-        <%= f.text_field :business_hours, class:"input-default", id:"business_hours", placeholder:"例）受付時間
-                                                                                                      月〜金
-                                                                                                      9:00〜17:00
-                                                                                                      定休日
-                                                                                                      土・日・祝日"%>
+        <%= f.text_field :business_hours, class:"input-default", id:"business_hours", placeholder:"例）受付時間 月〜金 9:00〜17:00  定休日 土・日・祝日"%>
       </div>
     </div>
     <%# /企業所在地・営業時間 %>
@@ -112,7 +108,7 @@
     <%# 下部ボタン %>
     <div class="register-btn-contents">
       <%= f.submit "登録する" ,class:"register-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
+      <%=link_to 'もどる', ser_profile_path(current_user), class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
   </div>

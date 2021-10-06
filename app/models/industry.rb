@@ -1,4 +1,4 @@
-class industry < ActiveHash::Base
+class Industry < ActiveHash::Base
   self.data = [
     { id: 0, name: '--' },
     { id: 1, name: 'オフセット印刷' },

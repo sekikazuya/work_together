@@ -4,12 +4,12 @@ class Company < ApplicationRecord
   belongs_to :industry
   belongs_to :prefecture
   belongs_to :user
-  has_many_attached :images
+  has_one_attached :image
 
   with_options presence: true do
     validates :name,
               :profile,
-              :city,
+              :city
     validates :name_kana, format: { with: /\A[ァ-ヶー－]+\z/ }
     validates :phone, format: { with: /\A\d{10,11}\z/ }
   end
