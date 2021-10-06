@@ -1,0 +1,120 @@
+<%# ヘッダー %>
+<%= render "shared/header" %>
+
+<%# 企業情報入力 %>
+<div class="companies-contents">
+  <div class="companies-main">
+    <h2 class="companies-title">会社の情報を入力</h2>
+    <%= form_with(model: @company, local: true) do |f| %>
+
+    <%= render 'shared/flash_messages', model: f.object %>
+
+    <%# 企業画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        企業画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :images, name: 'company[images][]', id:"company-image" %>
+      </div>
+    </div>
+    <%# /企業画像 %>
+    <%# 企業名 %>
+    <div class="new-company">
+      <div class="weight-bold-text">
+        会社名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :name, class:"companies-text", id:"company-name", placeholder:"会社名（必須 40文字まで)", maxlength:"40" %>
+      <div class="weight-bold-text">
+        会社名(カナ)
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :name_kana, class:"companies-text", id:"company-name_kana", placeholder:"会社名(カタカナ)（必須 40文字まで)", maxlength:"40" %>
+    </div>
+    <%# /企業名 %>
+
+    <%# 企業の詳細 %>
+    <div class="company-detail">
+      <div class="weight-bold-text">会社の詳細</div>
+      <div class="form">
+        <div class="weight-bold-text">
+          業種
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:sector_id, Sector.all, :id, :name, {}, {class:"select-box", id:"company-sector"}) %>
+        <div class="weight-bold-text">
+          最も得意なプロダクト
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:industry_id, Industry.all, :id, :name, {}, {class:"select-box", id:"company-industry"}) %>
+      </div>
+      <div class="weight-bold-text">
+        会社PR
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :profile, class:"companies-text", id:"company-profile", placeholder:"会社PR（必須 250文字まで)", maxlength:"250" %>
+    </div>
+    <%# /企業の詳細 %>
+
+    <%# 企業所在地・営業時間 %>
+    <div class="items-detail">
+      <div class="weight-bold-text">
+        <span>会社所在地・受付時間</span>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">都道府県</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">市区町村・番地</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :city, class:"input-default", id:"city", placeholder:"例）横浜市緑区青山1-11-1"%>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">建物名</label>
+          <span class="form-any">任意</span>
+        </div>
+        <%= f.text_field :building_name, class:"input-default", id:"building", placeholder:"例）柳ビル103"%>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">電話番号</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :phone, class:"input-default", id:"phone", placeholder:"例）09012345678",maxlength:"11"%>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">受付時間</label>
+          <span class="indispensable">任意</span>
+        </div>
+        <%= f.text_field :business_hours, class:"input-default", id:"business_hours", placeholder:"例）受付時間
+                                                                                                      月〜金
+                                                                                                      9:00〜17:00
+                                                                                                      定休日
+                                                                                                      土・日・祝日"%>
+      </div>
+    </div>
+    <%# /企業所在地・営業時間 %>
+
+    
+    <%# 下部ボタン %>
+    <div class="register-btn-contents">
+      <%= f.submit "登録する" ,class:"register-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+</div>

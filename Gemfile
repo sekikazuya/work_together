@@ -67,3 +67,6 @@ gem 'devise-i18n'
 # ActiveStorage
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
+
+# ActiveHash
+gem 'active_hash'
