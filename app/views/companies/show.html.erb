@@ -1,0 +1,61 @@
+<%# HEADER %>
+<%= render "shared/header" %>
+
+<%# MAIN %>
+<main class="main">
+  <div class="inner">
+    <div class="company__wrapper">
+      <%# 企業の登録者とログインしているユーザーが同じであれば以下を表示する %>
+      <% if user_signed_in? && current_user.id == @company.user_id %>
+        <div class="company__manage">
+          <%= link_to "編集する", edit_company_path(@company), class: "btn btn-primary" %>
+          <%= link_to "削除する", company_path(@company.id), method: :delete, class: "btn btn-denger" %>
+        </div>
+      <% end %>
+      <%# // 企業の登録者とログインしているユーザーが同じであれば上記を表示する %>
+      <p class="company__hedding">
+        <%= @company.name %>
+      </p>
+      <p class="company__hedding">
+        <%= @company.name_kana %>
+      </p>
+      <div class="company__image">
+        <%= image_tag @company.image %>
+      </div>
+      <div class="company__body">
+        <div class="company__detail">
+          <p class="company__title">業種</p>
+          <p class="company__message">
+            <%= @company.sector.name %>
+          </p>
+        </div>
+        <div class="company__detail">
+          <p class="company__title">最も得意なプロダクト</p>
+          <p class="company__message">
+            <%= @company.industry.name %>
+          </p>
+        </div>
+        <div class="company__detail">
+          <p class="company__title">会社PR</p>
+          <p class="company__message">
+            <%= @company.profile %>
+          </p>
+        </div>
+        <div class="company__detail">
+          <p class="company__title">所在地</p>
+          <p class="company__message">
+            <%= @company.prefecture.name %><%= @company.city %><br>
+            <%= @company.building_name %>
+          </p>
+        </div>
+        <div class="company__detail">
+          <p class="company__title">営業時間</p>
+          <p class="company__message">
+            <%= @company.business_hours %>
+          </p>
+        </div>
+      </div>
+      <%= link_to "担当者：#{@company.user.name}", user_path(@company.user.id), class: :company__user %>
+    </div>
+  </div>
+</main>

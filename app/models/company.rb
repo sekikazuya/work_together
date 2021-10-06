@@ -10,6 +10,7 @@ class Company < ApplicationRecord
     validates :name,
               :profile,
               :city
+              :image
     validates :name_kana, format: { with: /\A[ァ-ヶー－]+\z/ }
     validates :phone, format: { with: /\A\d{10,11}\z/ }
   end

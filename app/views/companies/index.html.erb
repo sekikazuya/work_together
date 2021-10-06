@@ -2,9 +2,43 @@
 <%= render "shared/header" %>
 
 <%# HOME %>
-<div id="home" class='big-bg'>
-  <div class='home-content wrapper'>
-    <h2 class='page-title'>パートナー企業を探せるwebサイト</h2>
-    <p>そのプロダクト、得意なパートナーがきっと見つかる。</p>
-  </div><%# home-content %>
-</div><%# /#home %>
+<div class="main">
+  <div id="home" class='big-bg'>
+    <div class='home-content wrapper'>
+      <h2 class='page-title'>パートナー企業を探せるwebサイト</h2>
+      <p>そのプロダクト、得意なパートナーがきっと見つかる。</p>
+    </div><%# home-content %>
+  </div><%# /#home %>
+
+  <%# 商品一覧 %>
+  <div class='company-contents'>
+    <h2 class='title'>ピックアップ</h2>
+    <div class="subtitle" >
+      新規登録企業
+    </div>
+    <ul class='company-lists'>
+      <% if @companies.present? %> 
+        <% @companies.each do |item| %>
+          <li class='list'>
+            <%= link_to company_path(company.id) do %>
+            <div class='company-img-content'>
+              <%= image_tag company.image, class: "company-img" %>
+            </div>
+            <div class='company-info'>
+              <h3 class='company-name'>
+                <%= company.name %>
+              </h3>
+              <div class='company-sector'>
+                <span><%= "業種：#{company.sector.name}" %><br>得意なプロダクト<br><%= company.industry.name %></span>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+  <%# /商品一覧 %>
+
+</div><%# /#main %>

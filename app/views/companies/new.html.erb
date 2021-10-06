@@ -96,8 +96,8 @@
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
-          <label class="form-text">受付時間</label>
-          <span class="indispensable">任意</span>
+          <label class="form-text">営業時間</label>
+          <span class="form-any">任意</span>
         </div>
         <%= f.text_field :business_hours, class:"input-default", id:"business_hours", placeholder:"例）受付時間 月〜金 9:00〜17:00  定休日 土・日・祝日"%>
       </div>
@@ -108,7 +108,7 @@
     <%# 下部ボタン %>
     <div class="register-btn-contents">
       <%= f.submit "登録する" ,class:"register-btn" %>
-      <%=link_to 'もどる', ser_profile_path(current_user), class:"back-btn" %>
+      <%=link_to 'もどる', user_profile_path(current_user), class:"btn btn-secondary" %>
     </div>
     <%# /下部ボタン %>
   </div>
