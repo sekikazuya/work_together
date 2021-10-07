@@ -1,0 +1,68 @@
+/* HOME
+--------------------------------- */
+.home-content {
+  text-align: center;
+  margin-top: 10%;
+  color: #524f4f;
+  text-shadow: 0 0 5px #ec782b;
+}
+.home-content p {
+  font-size: 1.125rem;
+  margin: 10px 0 42px
+}
+.company__register {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.company__register p {
+  font-size: 1.125rem;
+  padding-top: 10px;
+}
+.company__btn {
+  display: flex;
+  justify-content: center;
+}
+
+/* 見出し */
+.page-title {
+  font-size: 2.5rem;
+}
+/* 大きな背景画像 */
+.big-bg {
+  background-size: cover;
+  background-position: center top;
+}
+#home {
+  background-image: image-url('main-bg.jpg');
+  background-color: #ec782b;
+  background-blend-mode: lighten;
+  min-height: 100vh;
+}
+
+/* 商品一覧 */
+
+.company-contents {
+  background-color: #ec782b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0;
+}
+
+.company-contents>.title {
+  font-size: 6vh;
+  line-height: 1.4;
+  color: #FFF;
+  font-weight: bold;
+}
+
+.company-contents>.subtitle {
+  font-size: 4vh;
+  margin: 1vh 0;
+  text-decoration: none;
+  color: #524f4f;
+  font-weight: bold;
+}
+
+/* //商品一覧 */

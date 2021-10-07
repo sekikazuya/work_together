@@ -8,37 +8,23 @@
       <h2 class='page-title'>パートナー企業を探せるwebサイト</h2>
       <p>そのプロダクト、得意なパートナーがきっと見つかる。</p>
     </div><%# home-content %>
+    <div class="company__register">
+      <p>あなたの会社を登録しよう！</p>
+    </div>
+    <div class="company__btn">
+      <%= link_to "会社を登録する", new_company_path(@company), class: "new-company-btn btn btn-info" %>
+    </div>
   </div><%# /#home %>
 
-  <%# 商品一覧 %>
+  <%# 企業一覧 %>
   <div class='company-contents'>
     <h2 class='title'>ピックアップ</h2>
     <div class="subtitle" >
       新規登録企業
     </div>
-    <ul class='company-lists'>
-      <% if @companies.present? %> 
-        <% @companies.each do |item| %>
-          <li class='list'>
-            <%= link_to company_path(company.id) do %>
-            <div class='company-img-content'>
-              <%= image_tag company.image, class: "company-img" %>
-            </div>
-            <div class='company-info'>
-              <h3 class='company-name'>
-                <%= company.name %>
-              </h3>
-              <div class='company-sector'>
-                <span><%= "業種：#{company.sector.name}" %><br>得意なプロダクト<br><%= company.industry.name %></span>
-                </div>
-              </div>
-            </div>
-            <% end %>
-          </li>
-        <% end %>
-      <% end %>
-    </ul>
+    <%# 企業一覧を表示する部分テンプレート %>
+    <%= render partial: "company", collection: @companies %>
   </div>
-  <%# /商品一覧 %>
+  <%# /企業一覧 %>
 
 </div><%# /#main %>

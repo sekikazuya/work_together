@@ -19,7 +19,9 @@
 
  @import "bootstrap";
  @import "shared/header.scss";
- @import "companies.scss";
+ @import "companies/index.scss";
+ @import "companies/show.scss";
+ @import "companies/new.scss";
  @import "user/registration.scss";
  @import "users.scss";
  @import "reset.css";

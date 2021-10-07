@@ -1,3 +1,6 @@
+<%# cssは商品出品のものを併用しています。
+app/assets/stylesheets/companies/new.scss %>
+
 <%# ヘッダー %>
 <%= render "shared/header" %>
 
@@ -12,7 +15,7 @@
     <%# 企業画像 %>
     <div class="img-upload">
       <div class="weight-bold-text">
-        会社画像
+        企業画像
         <span class="indispensable">必須</span>
       </div>
       <div class="click-upload">
@@ -62,7 +65,7 @@
     <%# /企業の詳細 %>
 
     <%# 企業所在地・営業時間 %>
-    <div class="companies-detail">
+    <div class="items-detail">
       <div class="weight-bold-text">
         <span>会社所在地・受付時間</span>
       </div>
@@ -108,7 +111,7 @@
     <%# 下部ボタン %>
     <div class="register-btn-contents">
       <%= f.submit "登録する" ,class:"btn btn-danger" %>
-      <%=link_to 'もどる', user_profile_path(current_user), class:"btn btn-secondary" %>
+      <%=link_to 'もどる', company_path(@company.id), class:"btn btn-secondary" %>
     </div>
     <%# /下部ボタン %>
   </div>

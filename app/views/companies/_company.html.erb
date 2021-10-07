@@ -1,0 +1,19 @@
+<div class="company-card">
+  <ul class='company-lists'>
+    <% if @companies.present? %> 
+      <% @companies.each do |company| %>
+        <li class='list'>
+          <%= link_to company_path(company.id) do %>
+          <div class="card" style="width: 18rem;">
+            <%= image_tag company.image, class:"card-img-top" %>
+            <div class="card-body">
+              <h5 class="card-title"><%= company.name %></h5>
+              <p class="card-text"><%= "業種：#{company.sector.name}" %><br>得意なプロダクト<br><%= company.industry.name %></p>
+            </div>
+          </div>
+          <% end %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

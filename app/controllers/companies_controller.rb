@@ -1,7 +1,7 @@
 class CompaniesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_company, except: [:index, :new, :create]
-  before_action :move_to_index, only: [:edit, :update]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
     @companies = Company.order('created_at DESC')
