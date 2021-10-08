@@ -2,6 +2,17 @@
 
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
+  before_action :search_company, except: [:update, :destroy]
+
+  def search
+    @results = @p.result.includes(:user)
+  end
+
+  private
+
+  def search_company
+    @p = Company.ransack(params[:q])
+  end
 
   # GET /resource/sign_in
   # def new
