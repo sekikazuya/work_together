@@ -8,4 +8,6 @@ class User < ApplicationRecord
     validates :name, :company, :occupation, :position
   end
   has_many :companies
+  has_many :room_users
+  has_many :rooms, through: :room_users
 end
