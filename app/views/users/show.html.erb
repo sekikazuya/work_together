@@ -49,7 +49,17 @@
       </div>
       <div class="user__card">
         <%# ユーザーが登録した会社一覧 %>
-        <%= render partial: "companies/company", collection: @company %>
+        <div class="contents row">
+          <% if @company.present? %> 
+              <% @company.each do |company| %>
+                <%= render partial: "companies/company", collection: @company %>
+              <% end %>
+          <% else %>
+            <div class="nil-company">
+              <p>登録している会社がありません。あなたの会社を登録してみよう！。</p>
+            </div>
+          <% end %>
+        </div>
         <%# // ユーザーが登録した会社一覧 %>
       </div>
     </div>

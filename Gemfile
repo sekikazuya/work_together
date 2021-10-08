@@ -70,3 +70,6 @@ gem 'image_processing', '~> 1.2'
 
 # ActiveHash
 gem 'active_hash'
+
+# 検索機能
+gem 'ransack'

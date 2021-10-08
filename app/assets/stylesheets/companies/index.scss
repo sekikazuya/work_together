@@ -10,19 +10,7 @@
   font-size: 1.125rem;
   margin: 10px 0 42px
 }
-.company__register {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-}
-.company__register p {
-  font-size: 1.125rem;
-  padding-top: 10px;
-}
-.company__btn {
-  display: flex;
-  justify-content: center;
-}
+
 
 /* 見出し */
 .page-title {
@@ -40,25 +28,76 @@
   min-height: 100vh;
 }
 
+/* 検索フォーム */
+
+.search-form {
+  margin-top: 20vh;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.search-form p {
+  font-size: 1.125rem;
+  padding-top: 10px;
+  color: #524f4f;
+  text-shadow: 0 0 5px #ec782b;
+}
+.search-top {
+  width: 75vw;
+  display: flex;
+  justify-content: center;
+}
+.search-bottom {
+  margin-top: 3px;
+  display: flex;
+  justify-content: center;
+}
+.select-label {
+  margin-left: 10px;
+  color: #524f4f;
+  text-shadow: 0 0 5px #ec782b;
+}
+
+/* //検索フォーム */
+
+/* 企業登録ボタン */
+
+.company__register {
+  margin-top: 10vh;
+  text-align: center;
+  flex-direction: column;
+}
+.company__register p {
+  font-size: 1.125rem;
+  padding-top: 10px;
+  color: #524f4f;
+  text-shadow: 0 0 5px #ec782b;
+}
+
+
+/* //企業登録ボタン */
+
 /* 商品一覧 */
 
 .company-contents {
   background-color: #ec782b;
-  display: flex;
+}
+.company-title {
   flex-direction: column;
+  display: flex;
   align-items: center;
-  padding: 10vh 0;
+  padding: 5vh 0;
 }
 
-.company-contents>.title {
-  font-size: 6vh;
+.company-title>.title {
   line-height: 1.4;
   color: #FFF;
   font-weight: bold;
 }
 
-.company-contents>.subtitle {
-  font-size: 4vh;
+.company-title>.subtitle {
+  font-size: 3vh;
   margin: 1vh 0;
   text-decoration: none;
   color: #524f4f;

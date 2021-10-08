@@ -6,6 +6,14 @@ class Company < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
+  def self.search(search)
+    if search != ""
+      Company.where('profile LIKE(?)', "%#{search}%")
+    else
+      Company.all
+    end
+  end
+
   with_options presence: true do
     validates :name,
               :profile,

@@ -7,23 +7,55 @@
     <div class='home-content wrapper'>
       <h2 class='page-title'>パートナー企業を探せるwebサイト</h2>
       <p>そのプロダクト、得意なパートナーがきっと見つかる。</p>
-    </div><%# home-content %>
+    </div><%# /home-content %>
+    <div class='search-form'>
+      <div class='search-text'>
+        <p>パートナー企業を検索する</p>
+      </div>
+      <%= search_form_for @p, url: companies_search_path do |f| %>
+        <div class="search-top">
+          <%= f.text_field :name_or_name_kana_or_profile_cont, placeholder: "キーワードから探す", class: "search-input form-control me-2" %>
+          <button class="search-button input-group-append">
+            <%= image_tag "search.png", class:"search-icon" %>
+          </button>
+        </div>
+        <div class="search-bottom">
+          <div class="label-select">
+            <%= f.label :sector_id_eq, '業種', class: 'select-label' %>
+            <%= f.collection_select :sector_id_eq, Sector.where.not(id: 0), :id, :name, include_blank: '指定なし', class:"select-box form-select" %>
+          </div>
+          <div class="label-select">
+            <%= f.label :industry_id_eq, '得意なプロダクト', class: 'select-label' %>
+            <%= f.collection_select :industry_id_eq, Industry.where.not(id: 0), :id, :name, include_blank: '指定なし', class:"select-box" %>
+          </div>
+        </div>
+      <% end %>
+    </div><%# /search-form %>
     <div class="company__register">
       <p>あなたの会社を登録しよう！</p>
-    </div>
-    <div class="company__btn">
-      <%= link_to "会社を登録する", new_company_path(@company), class: "new-company-btn btn btn-info" %>
+      <div class="company__btn">
+        <%= link_to "会社を登録する", new_company_path(@company), class: "new-company-btn btn btn-info" %>
+      </div>
     </div>
   </div><%# /#home %>
 
   <%# 企業一覧 %>
   <div class='company-contents'>
-    <h2 class='title'>ピックアップ</h2>
-    <div class="subtitle" >
-      新規登録企業
+    <div class='company-title'>
+      <h3 class='title'>ピックアップ</h3>
+      <div class="subtitle" >
+        新規登録企業
+      </div>
     </div>
     <%# 企業一覧を表示する部分テンプレート %>
-    <%= render partial: "company", collection: @companies %>
+    <div class="contents row">
+      <% if @companies.present? %> 
+          <% @companies.each do |company| %>
+            <%= render partial: "company", collection: @companies %>
+          <% end %>
+      <% end %>
+    </div>
+    <%# /企業一覧を表示する部分テンプレート %>
   </div>
   <%# /企業一覧 %>
 
