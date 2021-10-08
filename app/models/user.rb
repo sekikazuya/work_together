@@ -7,4 +7,5 @@ class User < ApplicationRecord
   with_options presence: true do
     validates :name, :company, :occupation, :position
   end
+  has_many :companies
 end

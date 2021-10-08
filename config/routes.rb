@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   get 'users/:id/profile', to: 'users#show', as: 'user_profile'
 
   root to: "companies#index"
+  get 'companies/search'
   resources :users, only: [:show]
+  resources :companies
 end

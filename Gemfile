@@ -63,3 +63,13 @@ gem 'devise'
 # 日本語化
 gem 'rails-i18n', '~> 6.0'
 gem 'devise-i18n'
+
+# ActiveStorage
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
+
+# ActiveHash
+gem 'active_hash'
+
+# 検索機能
+gem 'ransack'

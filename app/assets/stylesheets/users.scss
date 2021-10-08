@@ -3,12 +3,33 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* ユーザーページ */
+.user-contents {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
+}
+.user-box {
+  width: 70vw;
+  min-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .user__wrapper{
   min-height: calc(100vh - 161px);
+  text-align: center;
 }
 
 .page-heading {
   margin: 10px;
+}
+.user__profile {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 8px;
 }
 .table{
   border-collapse: collapse;
@@ -34,10 +55,4 @@
 .user__manage {
   width: 50vw;
   margin: 0 0 32px 20px;
-}
-.user__card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
 }

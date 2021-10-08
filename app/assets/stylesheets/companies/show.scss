@@ -1,0 +1,55 @@
+/* 詳細ページ */
+.company__wrapper{
+  min-height: calc(100vh - 161px);
+}
+.company__manage{
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+}
+.edit-company-btn {
+  margin: 10px 5px 0px;
+}
+.new-company-btn {
+  margin: 0 0 10px
+}
+.company__hedding{
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+.company__hedding_kana{
+  font-size: 20px;
+  text-align: center;
+}
+.company__user{
+  display: block;
+  font-size: 16px;
+  color: #999;
+  text-align: center;
+  text-decoration: underline;
+}
+.company__image{
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 16px 0;
+}
+.company-box-img {
+  height: 50vh;
+  width: 60vw;
+  min-height: 500px;
+  background-color: rgb(205, 202, 202);
+  object-fit: contain;
+}
+
+.company__detail{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+.company__title{
+  font-size: 20px;
+  font-weight: bold;
+}

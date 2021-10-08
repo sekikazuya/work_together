@@ -1,0 +1,25 @@
+<%# HEADER %>
+<%= render "shared/header" %>
+
+<div class="search__body">
+  <%# 企業一覧を表示する部分テンプレート %>
+  <div class="contents row">
+    <% if @results.present? %> 
+      <% @results.each do |company| %>
+        <%= render partial: "company", collection: @results %>
+      <% end %>
+    <% else %>
+      <div class="nil-message">
+        <p>一致する企業がありません。条件を変えて検索してください。</p>
+      </div>
+    <% end %>
+  </div>
+  <%# /企業一覧を表示する部分テンプレート %>
+
+  <%# 戻るボタン %>
+  <div class="back-btn">
+    <%=link_to 'もどる', root_path, class:"btn btn-secondary" %>
+  </div>
+  <%# /戻るボタン%>
+  
+</div>
