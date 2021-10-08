@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get 'companies/search'
   resources :users, only: [:show]
   resources :companies
+  resources :rooms, only: [:new, :create]
 end
