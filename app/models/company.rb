@@ -5,6 +5,7 @@ class Company < ApplicationRecord
   belongs_to :prefecture
   belongs_to :user
   has_one_attached :image
+  has_many :rooms
 
   def self.search(search)
     if search != ""

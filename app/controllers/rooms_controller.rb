@@ -3,6 +3,7 @@ class RoomsController < ApplicationController
 
   def new
     @room = Room.new
+    @company = Company.find(params[:company_id])
   end
 
   def create
@@ -22,6 +23,10 @@ class RoomsController < ApplicationController
 
   def search_company
     @p = Company.ransack(params[:q])
+  end
+
+  def room_params
+    params.require(:room).permit(:title, user_ids: []).merge(company_id: params[:company_id])
   end
 
 end

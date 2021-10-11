@@ -1,7 +1,7 @@
 class Room < ApplicationRecord
-  belomgs_to :company
+  belongs_to :company
   has_many :room_users
   has_many :users, through: :room_users
 
-  validates :title, presence:
+  validates :title, presence: true
 end

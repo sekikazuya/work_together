@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   root to: "companies#index"
   get 'companies/search'
   resources :users, only: [:show]
-  resources :companies
-  resources :rooms, only: [:new, :create]
+  resources :companies do
+    resources :rooms, only: [:new, :create]
+  end
 end
