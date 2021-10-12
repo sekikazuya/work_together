@@ -53,3 +53,16 @@
   font-size: 20px;
   font-weight: bold;
 }
+.company-iquiry {
+  text-align: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.company-iquiry-title {
+  color: #524f4f;
+  text-shadow: 0 0 5px #ec782b;
+}
+.company-rooms {
+  display: flex;
+  justify-content: center;
+}

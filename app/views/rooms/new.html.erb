@@ -1,0 +1,33 @@
+<%# HEADER %>
+<%= render "shared/header" %>
+<%# /HEADER %>
+
+<div class='iquiry-room-form'>
+  <h1>お問い合わせ</h1>
+  <%=form_with model: [@company, @room], url: company_rooms_path, local: true do |f|%>
+    <div class='iquiry-room-form__field'>
+      <div class='iquiry-room-form__field--left'>
+        <%= f.label :件名, class: 'iquiry-room-form__label'%>
+      </div>
+      <div class='iquiry-room-form__field--right'>
+        <%= f.text_field :title, class: 'iquiry__room_name iquiry-room-form__input', placeholder: '件名を入力してください'%>
+      </div>
+    </div>
+    <div class='iquiry-room-form__field'>
+      <div class='iquiry-room-form__field--left'>
+        <label class='iquiry-room-form__label' for='iquiry_room_to'>お問い合わせ先</label>
+      </div>
+      <div class='iquiry-room-form__field--right'>
+        <%= "#{@company.name} 担当者様" %>
+        <input name="room[user_ids][]" type="hidden" value=<%= @company.user.id %>>
+        <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>
+      </div>
+    </div>
+    <div class='iquiry-room-form__field'>
+      <div class='iquiry-room-form__field--left'></div>
+      <div class='iquiry-room-form__field--right'>
+        <%= f.submit "お問い合わせページへ", class: 'chat-room-form__action-btn'%>
+      </div>
+    </div>
+  <% end %>
+</div>

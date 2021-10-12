@@ -44,7 +44,6 @@
   text-shadow: 0 0 5px #ec782b;
 }
 .search-top {
-  width: 75vw;
   display: flex;
   justify-content: center;
 }
@@ -82,6 +81,10 @@
 
 .company-contents {
   background-color: #ec782b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0;
 }
 .company-title {
   flex-direction: column;
@@ -102,6 +105,12 @@
   text-decoration: none;
   color: #524f4f;
   font-weight: bold;
+}
+.contents {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* //商品一覧 */

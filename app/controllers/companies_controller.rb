@@ -22,6 +22,8 @@ class CompaniesController < ApplicationController
   end
 
   def show
+    @room = Room.new
+    @rooms = @company.rooms.includes(:user)
   end
 
   def edit

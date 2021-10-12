@@ -53,6 +53,10 @@
           <% @companies.each do |company| %>
             <%= render partial: "company", collection: @companies %>
           <% end %>
+      <% else %>
+            <div class="nil-company">
+              <p>登録されている会社はありません。</p>
+            </div>
       <% end %>
     </div>
     <%# /企業一覧を表示する部分テンプレート %>

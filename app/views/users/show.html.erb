@@ -42,11 +42,15 @@
       <h2 class="page-heading">
         <%= "#{@user.name}さんが登録した会社"%>
       </h2>
-      <div class="user__profile">
-        <div class="user__manage">
-            <%= link_to "新しく会社を登録する", new_company_path(@company), class: "new-company-btn btn btn-info btn-block" %>
+      <%# ログインしているユーザーとユーザー詳細ページのユーザーが同じであれば以下を表示する %>
+      <% if user_signed_in? && current_user.id == @user.id %>
+        <div class="user__profile">
+          <div class="user__manage">
+              <%= link_to "新しく会社を登録する", new_company_path(@company), class: "new-company-btn btn btn-info btn-block" %>
+          </div>
         </div>
-      </div>
+      <% end %>
+      <%# // ログインしているユーザーとユーザー詳細ページのユーザーが同じであれば上記を表示する %>
       <div class="user__card">
         <%# ユーザーが登録した会社一覧 %>
         <div class="contents row">
@@ -56,12 +60,28 @@
               <% end %>
           <% else %>
             <div class="nil-company">
-              <p>登録している会社がありません。あなたの会社を登録してみよう！。</p>
+              <p>登録している会社はありません。</p>
             </div>
           <% end %>
         </div>
         <%# // ユーザーが登録した会社一覧 %>
       </div>
+      <%# ログインしているユーザーとユーザー詳細ページのユーザーが同じであれば以下を表示する %>
+      <% if user_signed_in? && current_user.id == @user.id %>
+        <%# ユーザーが参加している問い合わせルーム一覧 %>
+        <h2 class="page-heading">
+          <%= "#{@user.name}さんが参加している問い合わせ一覧" %>
+        </h2>
+        <div class="user-rooms">
+          <%# if @user.rooms.present? %>
+            <%#= render partial: "rooms/room", collection: @user.room.id %>
+          <%# else %>
+            <p> お問い合わせはありません </p>
+          <%# end %>
+        </div>
+        <%# //ユーザーが参加している問い合わせルーム一覧 %>
+      <% end %>
+      <%# // ログインしているユーザーとユーザー詳細ページのユーザーが同じであれば上記を表示する %>
     </div>
   </div>
 </div>
