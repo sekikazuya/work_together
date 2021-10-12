@@ -68,28 +68,31 @@
           </tbody>
         </table>
       </div>
-      <%# 企業の登録者とログインしているユーザーが同じであれば以下を表示する %>
-      <% if user_signed_in? && current_user.id == @company.user_id %>
-        <%# お問い合わせ一覧 %>
-        <h2 class="company-iquiry">
-          <%= "お問い合わせ一覧" %>
-        </h2>
-        <div class="company-rooms">
-          <% if @company.rooms.present? %>
-            <%= render partial: "rooms/room", collection: @company.room.id %>
-          <% else %>
-            <p> お問い合わせはありません </p>
-          <% end %>
-        </div>
-        <%# //お問い合わせ一覧 %>
-      <% end %>
-      <%# // 企業の登録者とログインしているユーザーが同じであれば上記を表示する %>
-      <%# 企業の登録者とユーザーが違う場合、下記を表示 %>
-      <% if current_user.id != @company.user_id %>
-        <div class="create-room">
-          <%= link_to "問い合わせる", new_company_room_path(@company), class: "btn btn-danger rounded-pill"%>
-        </div>
-      <% end %>
+      <div class="company-iquiry">
+        <%# 企業の登録者とログインしているユーザーが同じであれば以下を表示する %>
+        <% if user_signed_in? && current_user.id == @company.user_id %>
+          <%# お問い合わせ一覧 %>
+          <h2 class="company-iquiry-title">
+            <%= "お問い合わせ一覧" %>
+          </h2>
+          <div class="company-rooms">
+            <%# if @company.rooms.present? %>
+              <%#= render partial: "rooms/room", collection: @company.rooms %>
+            <%# else %>
+              <p> お問い合わせはありません </p>
+            <%# end %>
+          </div>
+          <%# //お問い合わせ一覧 %>
+        <% end %>
+        <%# // 企業の登録者とログインしているユーザーが同じであれば上記を表示する %>
+        <%# 企業の登録者とユーザーが違う場合、下記を表示 %>
+        <% if current_user.id != @company.user_id %>
+          <div class="create-room">
+            <%#= link_to "問い合わせる", new_company_room_path(@company), class: "btn btn-danger rounded-pill"%>
+          </div>
+        <% end %>
+        <%# // 企業の登録者とユーザーが違う場合、上記を表示 %>
+      </div>
     </div>
   </div>
 </main>

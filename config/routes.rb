@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get 'companies/search'
   resources :users, only: [:show]
   resources :companies do
-    resources :rooms, only: [:new, :create]
+    resources :rooms, only: [:index, :new, :create, :destroy] do
+      resources :iquiries, only: [:index, :create]
+    end
   end
 end

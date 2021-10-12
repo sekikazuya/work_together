@@ -1,6 +1,10 @@
 class RoomsController < ApplicationController
   before_action :search_company, except: [:update, :destroy]
 
+  def index
+    @room = Room.all
+  end
+
   def new
     @room = Room.new
     @company = Company.find(params[:company_id])
@@ -9,10 +13,16 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
     if @room.save
-      redirect_to root_path
+      redirect_to company_room_iquiries_path
     else
       render :new
     end
+  end
+
+  def destroy
+    room = Room.find(params[:id])
+    room.destroy
+    redirect_to root_path
   end
 
   def search

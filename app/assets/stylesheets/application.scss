@@ -17,6 +17,10 @@
   *= require_self
   */
 
+* {
+  box-sizing: border-box;
+}
+
  @import "bootstrap";
  @import "shared/header.scss";
  @import "companies/index.scss";

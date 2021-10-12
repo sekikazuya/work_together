@@ -1,14 +1,22 @@
+.company-card {
+  display: flex;
+  justify-content: center;
+}
 .company-lists {
-  width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-
-.company-img-content {
+.company-lists>.list {
+  height: 20rem;
+  margin: 1vh;
+  padding: 1vw;
+}
+.card-img-top {
+  height: 10rem;
   position: relative;
 }
-
 .card-body {
+  height: 10rem;
   color: black;
 }
