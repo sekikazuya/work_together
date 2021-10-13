@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: work_together_production
-  username: work_together
-  password: <%= ENV['WORK_TOGETHER_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
