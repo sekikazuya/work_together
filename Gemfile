@@ -73,3 +73,7 @@ gem 'active_hash'
 
 # 検索機能
 gem 'ransack'
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
