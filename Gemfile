@@ -80,6 +80,8 @@ gem 'active_hash'
 # 検索機能
 gem 'ransack'
 
+gem 'pry-rails'
+
 group :production do
   gem 'unicorn', '5.4.1'
 end

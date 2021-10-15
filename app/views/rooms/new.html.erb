@@ -4,7 +4,7 @@
 
 <div class='iquiry-room-form'>
   <h1>お問い合わせ</h1>
-  <%=form_with model: [@company, @room], url: company_rooms_path, local: true do |f|%>
+  <%=form_with model: [@company, @room], local: true do |f|%>
     <div class='iquiry-room-form__field'>
       <div class='iquiry-room-form__field--left'>
         <%= f.label :件名, class: 'iquiry-room-form__label'%>
@@ -26,7 +26,7 @@
     <div class='iquiry-room-form__field'>
       <div class='iquiry-room-form__field--left'></div>
       <div class='iquiry-room-form__field--right'>
-        <%= f.submit "お問い合わせページへ", class: 'chat-room-form__action-btn'%>
+        <%= f.submit "お問い合わせページへ",class: 'chat-room-form__action-btn'%>
       </div>
     </div>
   <% end %>

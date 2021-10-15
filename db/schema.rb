@@ -54,10 +54,8 @@ ActiveRecord::Schema.define(version: 2021_10_11_080655) do
     t.text "message"
     t.bigint "user_id", null: false
     t.bigint "room_id", null: false
-    t.bigint "company_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["company_id"], name: "index_iquiries_on_company_id"
     t.index ["room_id"], name: "index_iquiries_on_room_id"
     t.index ["user_id"], name: "index_iquiries_on_user_id"
   end
@@ -97,7 +95,6 @@ ActiveRecord::Schema.define(version: 2021_10_11_080655) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "companies", "users"
-  add_foreign_key "iquiries", "companies"
   add_foreign_key "iquiries", "rooms"
   add_foreign_key "iquiries", "users"
   add_foreign_key "room_users", "rooms"

@@ -13,10 +13,14 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
     if @room.save
-      redirect_to company_room_iquiries_path
+      redirect_to room_path(@room.id)
     else
       render :new
     end
+  end
+
+  def show
+    @room = Room.find(params[:id])
   end
 
   def destroy
