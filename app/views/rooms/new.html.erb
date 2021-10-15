@@ -10,7 +10,7 @@
         <%= f.label :件名, class: 'iquiry-room-form__label'%>
       </div>
       <div class='iquiry-room-form__field--right'>
-        <%= f.text_field :title, class: 'iquiry__room_name iquiry-room-form__input', placeholder: '件名を入力してください'%>
+        <%= f.text_field :title, class: 'iquiry__room_name iquiry-room-form__input form-control', placeholder: '件名を入力してください'%>
       </div>
     </div>
     <div class='iquiry-room-form__field'>
@@ -26,7 +26,7 @@
     <div class='iquiry-room-form__field'>
       <div class='iquiry-room-form__field--left'></div>
       <div class='iquiry-room-form__field--right'>
-        <%= f.submit "お問い合わせページへ",class: 'chat-room-form__action-btn'%>
+        <%= f.submit "お問い合わせページへ",class: 'iquiry-room-form__action-btn btn-outline-light'%>
       </div>
     </div>
   <% end %>

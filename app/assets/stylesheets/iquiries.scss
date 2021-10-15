@@ -1,3 +1,107 @@
-// Place all the styles related to the iquiries controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.wrapper {
+  flex-direction: column;
+}
+
+.chat {
+  background-color: #FFFFFF;
+  width: 100vw;
+}
+
+.iquiry-header {
+  height: 100px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: sandybrown;
+}
+
+.header-title {
+  font-size: 24px;
+  color: #333;
+}
+
+
+.iquiries {
+  background-color: #FAFAFA;
+  height: calc(100vh - 90px);
+  padding: 46px 40px 0;
+  overflow: scroll;
+}
+
+.iquiry {
+  margin: 10px 10vw;
+}
+
+.upper-iquiry {
+  display: flex;
+}
+
+.iquiry-user {
+  font-size: 14px;
+  color: #434a54;
+}
+
+.iquiry-date {
+  font-size: 12px;
+  color: #999;
+  padding-left: 10px;
+}
+
+.lower-iquiry {
+  margin-top: 10px;
+}
+
+.iquiry-message {
+  color: #434a54;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.form {
+  background-color: sandybrown;
+  height: 90px;
+  padding: 20px 40px;
+  display: flex;
+}
+
+.form-input {
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  width: 100%;
+}
+
+.form-message {
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.form-image {
+  font-size: 12px;
+  background-color: lightblue;
+  color: white;
+  border-radius: 5px;
+  padding: 12px;
+  width: 60px;
+  margin: 5px 10px;
+  text-align: center;
+}
+
+.form-submit {
+  background-color: #ec782b;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+  height: 50px;
+  padding: 0 20px;
+  margin-left: 15px;
+}
+
+.hidden {
+  display: none;
+}
