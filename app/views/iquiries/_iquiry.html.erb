@@ -14,5 +14,6 @@
       <!-- 投稿したメッセージ内容を記述する -->
       <%= iquiry.message %>
     </div>
+    <%= image_tag iquiry.image.variant(resize: '500x500'), class: 'iquiry-image' if iquiry.image.attached? %>
   </div>
 </div>
