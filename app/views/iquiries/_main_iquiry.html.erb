@@ -1,8 +1,9 @@
 <div class="iquiries">
+  <%= render partial: 'iquiry', collection: @iquiries %>
 </div>
 
 <%# メッセージ入力フォーム %>
-<%= form_with model: [@company, @room, @iquiry], class: 'form', local: true do |f| %>
+<%= form_with model: [@room, @iquiry], class: 'form', local: true do |f| %>
   <div class="form-input">
     <%= f.text_field :message, class: 'form-message', placeholder: 'お問い合わせ内容を入力してください' %>
     <label class="form-image">
@@ -10,6 +11,6 @@
       <%= f.file_field :image, class: 'hidden' %>
     </label>
   </div>
-  <%= f.submit '送信', class: 'form-submit　btn btn-outline-primary' %>
+  <%= f.submit '送信', class: 'form-submit' %>
 <% end %>
 <%# // メッセージ入力フォーム %>

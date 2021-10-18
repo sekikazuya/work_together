@@ -73,11 +73,11 @@
           <%= "#{@user.name}さんが参加している問い合わせ一覧" %>
         </h2>
         <div class="user-rooms">
-          <%# if @user.rooms.present? %>
-            <%#= render partial: "rooms/room", collection: @user.room.id %>
-          <%# else %>
+          <% if @user.rooms.present? %>
+            <%= render "rooms/room" %>
+          <% else %>
             <p> お問い合わせはありません </p>
-          <%# end %>
+          <% end %>
         </div>
         <%# //ユーザーが参加している問い合わせルーム一覧 %>
       <% end %>

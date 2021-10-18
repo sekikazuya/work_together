@@ -1,0 +1,19 @@
+<div class="iquiry">
+  <div class="upper-iquiry">
+    <div class="iquiry-user">
+      <!-- 投稿したユーザー名情報を出力する -->
+      <%= iquiry.user.name %>
+    </div>
+    <div class="iquiry-date">
+      <!-- 投稿した時刻を出力する -->
+      <%= l iquiry.created_at %>
+    </div>
+  </div>
+  <div class="lower-iquiry">
+    <div class="iquiry-message">
+      <!-- 投稿したメッセージ内容を記述する -->
+      <%= iquiry.message %>
+    </div>
+    <%= image_tag iquiry.image.variant(resize: '500x500'), class: 'iquiry-image' if iquiry.image.attached? %>
+  </div>
+</div>

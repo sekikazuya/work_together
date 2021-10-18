@@ -6,7 +6,7 @@
   <div class="iquiry-header">
     <div class="left-header">
       <div class="header-title">
-        <%= "件名：#{@room.title}" %>
+        <%= link_to "件名：#{@room.title}", room_iquiries_path(@room) %>
       </div>
     </div>
     <div class="right-header">
@@ -16,9 +16,4 @@
     </div>
   </div>
   <%# // お問い合わせチャットルームHEADEW %>
-  <%# お問い合わせチャットルームメイン %>
-  <div class="chat">
-    <%= render "main_iquiry" %>
-  </div>
-  <%# // お問い合わせチャットルームメイン %>
 </div>
