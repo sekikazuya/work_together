@@ -7,8 +7,8 @@ class User < ApplicationRecord
   with_options presence: true do
     validates :name, :company, :occupation, :position
   end
-  has_many :companies
-  has_many :room_users
+  has_many :companies, dependent: :destroy
+  has_many :room_users, dependent: :destroy
   has_many :rooms, through: :room_users
-  has_many :iquiries
+  has_many :iquiries, dependent: :destroy
 end
