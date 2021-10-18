@@ -1,14 +1,14 @@
 class IquiriesController < ApplicationController
+  before_action :authenticate_user!
   before_action :search_company, except: [:update, :destroy]
+  before_action :set_room, only: [:index, :create]
 
   def index
     @iquiry = Iquiry.new
-    @room = Room.find(params[:room_id])
     @iquiries = @room.iquiries.includes(:user)
   end
 
   def create
-    @room = Room.find(params[:room_id])
     @iquiry = @room.iquiries.new(iquiry_params)
     if @iquiry.save
       redirect_to room_iquiries_path(@room)
@@ -30,6 +30,10 @@ class IquiriesController < ApplicationController
 
   def iquiry_params
     params.require(:iquiry).permit(:message, :image).merge(user_id: current_user.id)
+  end
+
+  def set_room
+    @room = Room.find(params[:room_id])
   end
 
 end

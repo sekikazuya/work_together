@@ -5,7 +5,7 @@ class Company < ApplicationRecord
   belongs_to :prefecture
   belongs_to :user
   has_one_attached :image
-  has_many :rooms
+  has_many :rooms, dependent: :destroy
 
   def self.search(search)
     if search != ""
@@ -19,9 +19,9 @@ class Company < ApplicationRecord
     validates :name,
               :profile,
               :city
-              :image
     validates :name_kana, format: { with: /\A[ァ-ヶー－]+\z/ }
     validates :phone, format: { with: /\A\d{10,11}\z/ }
+    validates :image, blob: { content_type: :image }
   end
   validates :sector_id, :industry_id, :prefecture_id, numericality: { other_than: 0, message: "プルダウンより選択してください" }
 end
