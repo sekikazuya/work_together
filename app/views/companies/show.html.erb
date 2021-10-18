@@ -77,7 +77,7 @@
           </h2>
           <div class="company-rooms">
             <% if @company.rooms.present? %>
-              <%= render partial: "rooms/room", collection: @company.rooms %>
+              <%= render"rooms/room" %>
             <% else %>
               <p> お問い合わせはありません </p>
             <% end %>
@@ -88,7 +88,7 @@
         <%# 企業の登録者とユーザーが違う場合、下記を表示 %>
         <% if current_user.id != @company.user_id %>
           <div class="create-room">
-            <%= link_to "問い合わせる", new_company_room_path(@company.rooms), class: "btn btn-danger rounded-pill"%>
+            <%= link_to "問い合わせる", new_company_room_path(@company.id), class: "btn btn-danger rounded-pill"%>
           </div>
         <% end %>
         <%# // 企業の登録者とユーザーが違う場合、上記を表示 %>
