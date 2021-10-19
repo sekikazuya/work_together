@@ -14,6 +14,7 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
+    @company = Company.find(params[:company_id])
     if @room.save
       redirect_to room_path(@room.id)
     else

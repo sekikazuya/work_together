@@ -57,6 +57,19 @@
   color: #524f4f;
   text-shadow: 0 0 5px #ec782b;
 }
+.btn-space {
+  display: flex;
+  justify-content: center;
+}
+.top-search-btn {
+  height: 2.65rem;
+  width: 6rem;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #ec782b;
+  margin-top: 2vh;
+}
 
 /* //検索フォーム */
 
@@ -111,6 +124,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+.nil-company {
+  text-align: center;
 }
 
 /* //商品一覧 */

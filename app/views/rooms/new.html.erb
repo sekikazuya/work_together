@@ -23,11 +23,8 @@
         <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>
       </div>
     </div>
-    <div class='iquiry-room-form__field'>
-      <div class='iquiry-room-form__field--left'></div>
-      <div class='iquiry-room-form__field--right'>
-        <%= f.submit "お問い合わせページへ",class: 'iquiry-room-form__action-btn btn-outline-light'%>
-      </div>
+    <div class='iquiry-room-form__field--btn'>
+      <%= f.submit "お問い合わせページへ", class: 'iquiry-room-form__action-btn btn btn-outline-light' %>
     </div>
   <% end %>
 </div>

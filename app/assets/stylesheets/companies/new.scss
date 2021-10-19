@@ -30,7 +30,15 @@
   font-size: 12px;
   font-weight: bold;
 }
-
+.form-any {
+  background: lightgrey;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
 .weight-bold-text {
   font-weight: bold;
   min-width: 170px;
@@ -46,7 +54,7 @@
 
 /* /共通 */
 
-/* 商品画像 */
+/* 企業画像 */
 .img-upload {
   display: flex;
   justify-content: space-between;
@@ -64,7 +72,7 @@
   margin-bottom: 15px;
 }
 
-/* /商品画像 */
+/* /企業画像 */
 
 /* 企業名 */
 .new-company {
@@ -80,9 +88,9 @@
   resize: none;
 }
 
-/* /商品名と商品説明 */
+/* /企業名 */
 
-/* 商品の詳細など */
+/* 企業の詳細など */
 .company-detail {
   padding: 2vh 0;
 }
@@ -96,11 +104,12 @@
   margin: 2vh 0;
 }
 
-/* /商品の詳細など */
+/* /企業の詳細など */
 
 /* 下部ボタン */
 .register-btn-contents {
   width: 100%;
+  padding: 10px;
   text-align: center;
 }
 
