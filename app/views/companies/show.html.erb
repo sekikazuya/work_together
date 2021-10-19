@@ -86,9 +86,14 @@
         <% end %>
         <%# // 企業の登録者とログインしているユーザーが同じであれば上記を表示する %>
         <%# 企業の登録者とユーザーが違う場合、下記を表示 %>
-        <% if current_user.id != @company.user_id %>
+        <% if user_signed_in? && current_user.id != @company.user_id %>
           <div class="create-room">
             <%= link_to "問い合わせる", new_company_room_path(@company.id), class: "btn btn-danger rounded-pill"%>
+          </div>
+        <% end %>
+        <% unless user_signed_in? %>
+          <div class="create-room">
+            <%= link_to "ログインして問い合わせる", new_user_session_path, class: "btn btn-danger rounded-pill"%>
           </div>
         <% end %>
         <%# // 企業の登録者とユーザーが違う場合、上記を表示 %>
