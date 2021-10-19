@@ -33,7 +33,7 @@
         <%# ログインしているユーザーとユーザー詳細ページのユーザーが同じであれば以下を表示する %>
         <% if user_signed_in? && current_user.id == @user.id %>
           <div class="user__manage">
-            <%= link_to "編集する", edit_user_registration_path(@user), class: 'btn btn-primary  btn-block' %>
+            <%= link_to "編集する", edit_user_registration_path(@user), class: 'u-edit-btn btn btn-primary  btn-block' %>
           </div>
         <% end %>
         <%# // ログインしているユーザーとユーザー詳細ページのユーザーが同じであれば上記を表示する %>
@@ -55,9 +55,7 @@
         <%# ユーザーが登録した会社一覧 %>
         <div class="contents row">
           <% if @company.present? %> 
-              <% @company.each do |company| %>
-                <%= render partial: "companies/company", collection: @company %>
-              <% end %>
+                <%= render "companies/company" %>
           <% else %>
             <div class="nil-company">
               <p>登録している会社はありません。</p>

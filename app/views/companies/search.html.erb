@@ -6,7 +6,19 @@
   <div class="contents row">
     <% if @results.present? %> 
       <% @results.each do |company| %>
-        <%= render partial: "company", collection: @results %>
+        <ul class='company-lists'>
+      <li class='list'>
+        <%= link_to company_path(company.id) do %>
+        <div class="card" style="width: 18rem;">
+          <%= image_tag company.image, class:"card-img-top" %>
+          <div class="card-body">
+            <h5 class="card-title"><%= company.name %></h5>
+            <p class="card-text"><%= "業種：#{company.sector.name}" %><br>得意なプロダクト<br><%= company.industry.name %></p>
+          </div>
+        </div>
+        <% end %>
+      </li>
+    </ul>
       <% end %>
     <% else %>
       <div class="nil-message">
