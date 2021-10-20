@@ -1,3 +1,13 @@
+.search__body {
+  display: flex;
+  flex-direction: column;
+}
+.search__card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .nil-message {
   margin: 20vh 0 20vh 20vw;
   font-size: 20px;
@@ -6,6 +16,5 @@
 }
 
 .back-btn {
-  margin-top: 10vh;
-  margin-left: 20vw;
+  margin: 10vh 0 5vh 20vw;
 }
