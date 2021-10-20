@@ -90,6 +90,9 @@ gem 'ransack'
 gem 'pry-rails'
 gem 'activestorage-validator'
 
+# AWS S3設定
+gem "aws-sdk-s3", require: false
+
 # ユニコーンの導入
 group :production do
   gem 'unicorn', '5.4.1'
